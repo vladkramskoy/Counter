@@ -9,23 +9,22 @@ import UIKit
 
 class ViewController: UIViewController {
 
-    @IBOutlet weak var labelScore: UILabel!
-    @IBOutlet weak var bigRedButton: UIButton!
-    @IBOutlet weak var plusButton: UIButton!
-    @IBOutlet weak var minusButton: UIButton!
-    @IBOutlet weak var resetButton: UIButton!
-    @IBOutlet weak var historyOfChanges: UITextView!
+    @IBOutlet weak private var scoreLabel: UILabel!
+    @IBOutlet weak private var incrementBigButton: UIButton!
+    @IBOutlet weak private var incrementButton: UIButton!
+    @IBOutlet weak private var decrementButton: UIButton!
+    @IBOutlet weak private var resetButton: UIButton!
+    @IBOutlet weak private var historyTextField: UITextView!
+    
+    private var score = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        historyOfChanges.text = "История изменений:\n"
-        // Do any additional setup after loading the view.
+        historyTextField.text = "История изменений:\n"
     }
-    
-    private var score = 0
 
     private func showScore() {
-        labelScore.text = "Значение счетчика: \(score)"
+        scoreLabel.text = "Значение счетчика: \(score)"
     }
     
     private func showDate() -> String {
@@ -36,31 +35,31 @@ class ViewController: UIViewController {
     }
     
     private func showMessagePlusOne() {
-        historyOfChanges.insertText("[\(showDate())]: значение изменено на +1\n")
+        historyTextField.insertText("[\(showDate())]: значение изменено на +1\n")
     }
     
-    @IBAction func pushButton(_ sender: Any) {
+    @IBAction private func bigButtonTapped(_ sender: Any) {
         score += 1
         showScore()
         showMessagePlusOne()
     }
-    @IBAction func plusScore(_ sender: Any) {
+    @IBAction private func plusButtonTapped(_ sender: Any) {
         score += 1
         showScore()
         showMessagePlusOne()
     }
-    @IBAction func minusButton(_ sender: Any) {
+    @IBAction private func minusButtonTapped(_ sender: Any) {
         if score > 0 {
-            historyOfChanges.insertText("[\(showDate())]: значение изменено на -1\n")
+            historyTextField.insertText("[\(showDate())]: значение изменено на -1\n")
         } else {
-            historyOfChanges.insertText("[\(showDate())]: попытка уменьшить значение счётчика ниже 0\n")
+            historyTextField.insertText("[\(showDate())]: попытка уменьшить значение счётчика ниже 0\n")
         }
         score = max(score - 1, 0)
         showScore()
     }
-    @IBAction func resetScore(_ sender: Any) {
+    @IBAction private func resetScore(_ sender: Any) {
         score = 0
         showScore()
-        historyOfChanges.insertText("[\(showDate())]: значение сброшено\n")
+        historyTextField.insertText("[\(showDate())]: значение сброшено\n")
     }
 }

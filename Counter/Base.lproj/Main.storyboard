@@ -33,7 +33,7 @@
                                     <fontDescription key="titleFontDescription" type="system" pointSize="20"/>
                                 </buttonConfiguration>
                                 <connections>
-                                    <action selector="pushButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="XaY-PG-FP6"/>
+                                    <action selector="bigButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="XaY-PG-FP6"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CyN-1J-fqc">
@@ -44,7 +44,7 @@
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" image="plus" catalog="system"/>
                                 <connections>
-                                    <action selector="plusScore:" destination="BYZ-38-t0r" eventType="touchUpInside" id="rWB-fc-o0t"/>
+                                    <action selector="plusButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="rWB-fc-o0t"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Oq-nJ-a1y">
@@ -55,7 +55,7 @@
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" image="minus" catalog="system"/>
                                 <connections>
-                                    <action selector="minusButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="c2F-5M-h1e"/>
+                                    <action selector="minusButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="c2F-5M-h1e"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JUB-Dx-6s9">
@@ -82,12 +82,12 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </view>
                     <connections>
-                        <outlet property="bigRedButton" destination="cwg-K2-zWN" id="p5X-T6-gk0"/>
-                        <outlet property="historyOfChanges" destination="peu-Mh-p9B" id="gRp-bc-0md"/>
-                        <outlet property="labelScore" destination="28H-D5-rQP" id="yS9-1O-Adv"/>
-                        <outlet property="minusButton" destination="8Oq-nJ-a1y" id="5R5-Lz-vXb"/>
-                        <outlet property="plusButton" destination="CyN-1J-fqc" id="bOH-P7-MwZ"/>
+                        <outlet property="decrementButton" destination="8Oq-nJ-a1y" id="5R5-Lz-vXb"/>
+                        <outlet property="historyTextField" destination="peu-Mh-p9B" id="gRp-bc-0md"/>
+                        <outlet property="incrementBigButton" destination="cwg-K2-zWN" id="p5X-T6-gk0"/>
+                        <outlet property="incrementButton" destination="CyN-1J-fqc" id="bOH-P7-MwZ"/>
                         <outlet property="resetButton" destination="JUB-Dx-6s9" id="S43-5i-X8b"/>
+                        <outlet property="scoreLabel" destination="28H-D5-rQP" id="yS9-1O-Adv"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
